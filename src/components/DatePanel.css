@@ -1,0 +1,24 @@
+.datePanel{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    background-color: #202124;
+    border-radius: 10px;
+    border: 1px solid white;
+    padding: 1rem;
+    color: white;
+}
+
+.monthCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.monthCard:first-child{
+    font-weight: bold;
+}
+.dateCard{
+    font-weight: bold;
+}
