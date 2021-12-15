@@ -3,21 +3,31 @@
 // Lowecase tags are built in HTML. UpperCase is custom components
 import "./ExpenseItem.css";
 import DatePanel from "./DatePanel";
+import Card from "./Card";
 // Import css file to make the bundler link them
 
 // This function returns a component, other logic can still be done inside body
 // The attributes in App.js become parameters(props) here
 function ExpenseItem(props) {
-    const currentDate = new Date(); 
+  const currentDate = new Date();
+
+  function clickHandler(){
+    alert("Clicked");
+  }
   return (
-    <div className="expense-item">
-      {/*Note not class, but className, different in JSX*/}
-        <DatePanel month = {currentDate.toLocaleString('en-US', {month : 'long'})} date = {currentDate.getDate()} year = {currentDate.getFullYear()}></DatePanel>
+    <Card className="expense-item">
+      <DatePanel
+        month={currentDate.toLocaleString("en-US", { month: "long" })}
+        date={currentDate.getDate()}
+        year={currentDate.getFullYear()}
+      ></DatePanel>
       <div className="expense-item__description">
-        <h2>{props.title}</h2>
+        <h2 id = "title">{props.title}</h2>
         <div className="expense-item__price">{props.amount}</div>
       </div>
-    </div>
+
+      <button onClick = {clickHandler}>Change Title</button>
+    </Card>
   );
 }
 
