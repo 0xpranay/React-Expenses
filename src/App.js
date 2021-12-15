@@ -1,6 +1,6 @@
 // Import custom components
-import ExpensesList from './components/ExpensesList'
-
+import ExpensesList from './components/ExpensesList/ExpensesList'
+import NewExpense from './components/NewExpense/NewExpense';
 function App() {
   const expenses = [
     {
@@ -23,16 +23,15 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+
+  
   return (
     <div>
       <div>
-        <h2>Let's get started!</h2>
-
         {/* Now we can use it as a normal HTML element*/}
         {/* The attributes passed are received by function/component as parameters */}
-
+        <NewExpense></NewExpense>
         <ExpensesList expensesArray = {expenses}></ExpensesList>
-        
         
       </div>
     </div>
