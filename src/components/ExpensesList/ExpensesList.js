@@ -1,11 +1,19 @@
 
+import ExpensesFilter from '../ExpensesFilter/ExpensesFilter';
 import ExpenseItem from '../ExpenseItem/ExpenseItem'
 import './ExpensesList.css'
 
 function ExpensesList(props){
     const expenses = props.expensesArray;
+
+    function newFilterHandler(newFilterEntered){
+        alert("New filter year detected " + newFilterEntered);
+    }
+    
     return (
         <div className="expenses card">
+            <ExpensesFilter onNewFilter = {newFilterHandler}/>
+
             <ExpenseItem
           title={expenses[0].title}
           amount={expenses[0].amount}

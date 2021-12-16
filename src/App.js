@@ -1,7 +1,11 @@
 // Import custom components
-import ExpensesList from './components/ExpensesList/ExpensesList'
-import NewExpense from './components/NewExpense/NewExpense';
+import ExpensesList from "./components/ExpensesList/ExpensesList";
+import NewExpense from "./components/NewExpense/NewExpense";
 function App() {
+  function addExpenseHandler(expenses) {
+    console.log("From App.js ", expenses);
+  }
+
   const expenses = [
     {
       id: "e1",
@@ -24,15 +28,13 @@ function App() {
     },
   ];
 
-  
   return (
     <div>
       <div>
         {/* Now we can use it as a normal HTML element*/}
         {/* The attributes passed are received by function/component as parameters */}
-        <NewExpense></NewExpense>
-        <ExpensesList expensesArray = {expenses}></ExpensesList>
-        
+        <NewExpense onNewExpense={addExpenseHandler}></NewExpense>
+        <ExpensesList expensesArray={expenses}></ExpensesList>
       </div>
     </div>
   );
