@@ -93,8 +93,6 @@ function ExpenseForm(props) {
     setEnteredAmount("");
     setEnteredTitle("");
     setEnteredDate("");
-    console.log(expenseData);
-
     props.onSaveExpenseData(expenseData);
   }
 
@@ -139,9 +137,12 @@ function ExpenseForm(props) {
         </div>
       </div>
 
+
       <div className="new-expense__actions">
+        <button onClick={props.changeSwitchMode}>Cancel</button>
         <button type="submit">Add new expense</button>
       </div>
+
     </form>
   );
 }

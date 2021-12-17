@@ -10,7 +10,7 @@ import React, { useState } from 'react';
 // This function returns a component, other logic can still be done inside body
 // The attributes in App.js become parameters(props) here
 function ExpenseItem(props) {
-  const currentDate = new Date();
+  const currentDate = props.date;
 
   const [title, setTitle] = useState(props.title); // Use and define what useState should watch
    // So for changing/updation use the callable. To read the current state/value use the title/returned var, not props.title
@@ -30,10 +30,10 @@ function ExpenseItem(props) {
       <div className="expense-item__description">
         <h2 id = "title">{title}</h2> 
         {/* Note how we are using the title var i.e what's returned by the hook, not what we asked it to watch */}
-        <div className="expense-item__price">{props.amount}</div>
+        <div className="expense-item__price">${props.amount}</div>
       </div>
 
-      <button onClick = {clickHandler}>Change Title</button>
+      {/* <button onClick = {clickHandler}>Change Title</button> */}
     </Card>
   );
 }

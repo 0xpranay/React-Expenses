@@ -35,6 +35,8 @@
     border: 1px solid white;
     padding: 0.5rem;
     border-radius: 12px;
+    width: 20%;
+    text-align: center;
   }
   
   @media (min-width: 580px) {

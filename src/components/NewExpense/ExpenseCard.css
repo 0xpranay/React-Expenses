@@ -1,0 +1,9 @@
+.expense-bg{
+    width: 100%;
+}
+
+.add-expense{
+    padding: 2rem;
+    background-color: #40005d;
+    margin: 2rem auto;
+}
